@@ -9,10 +9,12 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [https://bespoke-smakager-e4d3e5.netlify.app](https://bespoke-smakager-e4d3e5.netlify.app) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+You can find the backend of the code, written in golang at [https://github.com/Subham-Pratap/golang-backend/tree/main/Golang-Serverless-Project](https://github.com/Subham-Pratap/golang-backend/tree/main/Golang-Serverless-Project)
 
 ### `npm test`
 
