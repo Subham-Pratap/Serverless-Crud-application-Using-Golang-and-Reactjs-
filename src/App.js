@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ProductDetails from "./components/ProductDetails";
+import AddProducts from "./components/AddProducts";
+import { useState } from "react";
+import axios from "axios";
+
+let url = "https://3kedcubnqg.execute-api.ap-south-1.amazonaws.com/prod";
 
 function App() {
+  const [data, setData] = useState([]);
+  const fetchAllProducts = () => {
+    axios
+      .get(url)
+      .then((data) => {
+        setData(data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>PRODUCT</h1>
+      <AddProducts fetchAllProducts={fetchAllProducts} />
+      <ProductDetails
+        fetchAllProducts={fetchAllProducts}
+        data={data}
+        setData={setData}
+      />
     </div>
   );
 }
